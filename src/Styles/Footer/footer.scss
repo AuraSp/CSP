@@ -1,0 +1,9 @@
+@import '../Variables/variables.scss';
+
+.footer {
+    font-family: map-get($font-families, Patrick);
+
+    span {
+        padding-right: 4em;
+    }
+}

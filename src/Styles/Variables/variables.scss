@@ -1,0 +1,44 @@
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Patrick+Hand&display=swap');
+
+// Font Variables
+$font-families: (
+    "Kalam": Kalam,
+    "Patrick": Patrick Hand
+);
+
+// Background Colors
+$background-colors: (
+    "main-background": #a4a4a4c1,
+    "loader-background": #00000036,
+    "inputContainer-background": #222222f8,
+    "input-background": #22222200,
+    "card-background": #222222dd,
+);
+
+//Widths
+$widths: (
+    "small": 15em,
+    "medium": 25em,
+    "viewport": 100vw
+);
+
+//Heights
+$heights: (
+    "card-tiles": 6em,
+    "max-window": 100vh,
+    "min-window": 100vh
+);
+
+//Borders
+$border-radius: (
+    "small": 1em,
+    "bigger": 12em
+);
+
+//Shadows
+$shadows: (
+    "loader-shadow": 0 0 4px #0000001a,
+    "inputBlock-shadow": 0 0 8px #ff00006b,
+    "cardList-shadow": 0 0 10px #222222dd
+);

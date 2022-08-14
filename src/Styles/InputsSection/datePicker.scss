@@ -1,0 +1,8 @@
+@import '../Variables/variables.scss';
+
+.dateInput {
+    width: map-get($widths, "medium");
+    background-color: map-get($background-colors, input-background);
+    font-family: map-get($font-families, Kalam);
+    border-radius: map-get($border-radius, "bigger");
+}

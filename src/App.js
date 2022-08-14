@@ -1,19 +1,20 @@
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import CompanyDetails from "./Components/CompanyDetails/CompanyDetails";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import SearchSection from "./components/SearchSection";
-import Card from './components/Card';
+import './Styles/MainContainer/main.css';
+
 
 function App() {
+
   return (
-    <div className="container m-auto p-0">
+    <div className="container-fluid mx-auto my-0 p-0 mainContainer">
 
       <Header />
 
       <main className='row col-lg-12 col-md-12 col-sm-12 p-0 mx-0'>
-        <SearchSection />
-        <Card />
+        <CompanyDetails />
       </main>
 
       <Footer />
