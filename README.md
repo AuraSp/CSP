@@ -1,5 +1,5 @@
-# Stock prices project
-Global comapnies's information and price history
+# Company Stock Prices History Project
+Global companies's information and prices history
 #### Application can be used to search general information about companies - its name, country, currency and website URL. By selecting date range, a diagram of stock history is visible and can be inspected for statistics;
 
 ## Framework Used
