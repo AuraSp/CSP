@@ -10,7 +10,7 @@ function Header() {
         <header className='row col-lg-12 col-md-12 col-sm-12 px-0 py-4 mx-0 headerLogo'>
             <span className='navbar-brand text-center fs-2'>
                 <AiOutlineStock className='text-danger fw-bold fs-2 mx-1' />
-                <span className='text-light'>Stock<b className='text-danger'>Rec</b></span>
+                <span className='text-secondary'>Stock<b className='text-danger'>Rec</b></span>
             </span>
         </header>
     )
