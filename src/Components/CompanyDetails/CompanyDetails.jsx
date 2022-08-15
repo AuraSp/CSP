@@ -107,7 +107,7 @@ function CompanyDetails() {
     return (
         <>
             <div className='row w-75 mx-auto py-4 inputContainer'>
-                <div className='row mx-auto w-50 my-2'>
+                <div className='row mx-auto w-50 d-flex my-2'>
                     <SearchBar
                         handleSubmit={handleSubmit}
                         setInputValue={setInputValue}

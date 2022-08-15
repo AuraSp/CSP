@@ -9,13 +9,13 @@ import '../../../Styles/InputsSection/datePicker.css';
 function DatePicker({ currentDate, handleEvent, handleCallback }) {
 
   return (
-    <div className='w-50 m-auto text-center'>
+    <div className='m-auto text-center'>
       <DateRangePicker
         onEvent={(picker) => handleEvent(picker)}
         onCallback={handleCallback}
         initialSettings={{ startDate: currentDate.value, endDate: currentDate.value }}
       >
-        <input type='text' className='border border-danger text-light text-center dateInput' />
+        <input type='text' className='border border-secondary text-light text-center dateInput' />
       </DateRangePicker>
     </div>
   )
