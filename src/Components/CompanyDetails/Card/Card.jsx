@@ -30,8 +30,8 @@ function Card({ errMsg, inputValue, info, loading, getStock, changeDate }) {
 
 
     return (
-        <div className="row mx-auto">
-            {Object.keys(info).length === 0 ?
+        <div className='row mx-auto'>
+            { info === undefined ?
                 (
                     <p className='rounded text-center text-light fs-5 mx-auto p-4 my-3 loading'>Company with that name does not exist!</p>
                 )
@@ -40,7 +40,7 @@ function Card({ errMsg, inputValue, info, loading, getStock, changeDate }) {
                     <>
 
                         <img src={info.logo ? info.logo : 'Loading logo...'} alt='Company Logo' className='col-lg-12 col-md-12 col-sm-12 img-thumnbnail p-0 w-25 rounded mx-auto my-3' />
-                        <ul className='col-lg-12 col-md-12 col-sm-12 d-flex flex-row flex-wrap justify-content-center list-unstyled my-1 list'>
+                        <ul className='col-lg-12 col-md-12 col-sm-12 d-flex flex-row flex-wrap justify-content-center list-unstyled my-1 list' data-testid='cardlist'>
                             <li className='col-lg-4 col-md-5 col-sm-12 border m-1 border-danger d-flex justify-content-center align-items-center'><button className='btn border-0 text-light' onClick={getChart}>{info.name}</button></li>
                             <li className='col-lg-4 col-md-5 col-sm-12 border m-1  border-danger d-flex justify-content-center align-items-center text-light'>{info.country}</li>
                             <li className='col-lg-4 col-md-5 col-sm-12 border m-1 border-danger d-flex justify-content-center align-items-center text-light'>{info.currency}</li>

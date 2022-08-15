@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from './Card/Card';
 import SearchBar from './Inputs/SearchBar';
 import DatePicker from './Inputs/DatePicker';
@@ -20,8 +20,8 @@ function CompanyDetails() {
     const [data, setData] = useState([]);
     const [inputValue, setInputValue] = useState('');
 
-    const [startDate, setStartDate] = useState(currentDate);
-    const [endDate, setEndDate] = useState(currentDate);
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
 
     let [getStock, setGetStock] = useState([]);
     const [changeDate, setChangeDate] = useState([]);
@@ -53,8 +53,8 @@ function CompanyDetails() {
 
     async function companyStock() {
         setLoading(true)
-        // let url = `https://finnhub.io/api/v1/stock/candle?symbol=${inputValue}&resolution=1&from=${startDate}&to=${endDate}` + apiKey
-        // console.log(url)
+        let url = `https://finnhub.io/api/v1/stock/candle?symbol=${inputValue.toUpperCase()}&resolution=1&from=${startDate}&to=${endDate}${apiKey}`
+        console.log(url)
         await fetch(`https://finnhub.io/api/v1/stock/candle?symbol=${inputValue.toUpperCase()}&resolution=1&from=${startDate}&to=${endDate}${apiKey}`,
             {
                 method: 'GET',
@@ -67,9 +67,11 @@ function CompanyDetails() {
                 setChangeDate(data.t);
                 if (data.s === 'no_data') {
                     logger.error('No data for current date, nor future date');
-                    setErrMsg('Choose data that is nor current, nor future!' + <br /> + 'If still not loading, please wait!');
+                    setErrMsg('Choose data that is nor current, nor future!');
+
                 } else {
                     logger.info('Searching information for: ' + inputValue);
+
                 }
             })
             .finally(() => {
@@ -78,7 +80,7 @@ function CompanyDetails() {
             })
             .catch((error) =>
                 logger.error('Error caused due to fetch. ' + error));
-        setErrMsg('Choose data that is nor current, nor future!');
+        setErrMsg('Choose data that is nor recent, nor future!');
     }
 
 
@@ -105,7 +107,7 @@ function CompanyDetails() {
     return (
         <>
             <div className='row w-75 mx-auto py-4 inputContainer'>
-                <div className="row mx-auto w-50 my-2">
+                <div className='row mx-auto w-50 my-2'>
                     <SearchBar
                         handleSubmit={handleSubmit}
                         setInputValue={setInputValue}
@@ -120,7 +122,7 @@ function CompanyDetails() {
                         currentDate={currentDate} />
                 </div>
             </div>
-            <div className="row mx-auto w-75 h-100">
+            <div className='row mx-auto w-75 h-100'>
                 {!loading ?
                     data.map((info) =>
                         <Card

@@ -15,7 +15,7 @@ function DatePicker({ currentDate, handleEvent, handleCallback }) {
         onCallback={handleCallback}
         initialSettings={{ startDate: currentDate.value, endDate: currentDate.value }}
       >
-        <input type="text" className="border border-danger text-light text-center dateInput" />
+        <input type='text' className='border border-danger text-light text-center dateInput' />
       </DateRangePicker>
     </div>
   )

@@ -32,31 +32,31 @@ function HistoryDiagram({ name, loading, diagramData }) {
       {!loading ?
         <>
           <Chart
-            id="zoomedChart"
+            id='zoomedChart'
             dataSource={diagramData}
             title={name}
           >
             <CommonSeriesSettings
               argumentField='Date'
-              type="candlestick"
+              type='candlestick'
             />
             <Series
-              openValueField="Open"
-              highValueField="High"
-              lowValueField="Low"
-              closeValueField="Close"
+              openValueField='Open'
+              highValueField='High'
+              lowValueField='Low'
+              closeValueField='Close'
 
             >
               <Aggregation enabled={true} />
-              <Reduction color="red" />
+              <Reduction color='red' />
             </Series>
             <ArgumentAxis
               valueMarginsEnabled={false}
-              argumentType="datetime"
+              argumentType='datetime'
             >
               <Label visible={false} />
             </ArgumentAxis>
-            <ValueAxis valueType="numeric" />
+            <ValueAxis valueType='numeric' />
             <Margin right={10} />
             <Legend visible={false} />
             <Tooltip enabled={true} />
@@ -67,11 +67,11 @@ function HistoryDiagram({ name, loading, diagramData }) {
           >
             <Size height={120} />
             <RsChart>
-              <RsValueAxis valueType="numeric" />
+              <RsValueAxis valueType='numeric' />
               <RsSeries
-                type="line"
-                valueField="Open"
-                argumentField="Date"
+                type='line'
+                valueField='Open'
+                argumentField='Date'
               >
               </RsSeries>
             </RsChart>
