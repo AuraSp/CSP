@@ -1,7 +1,0 @@
-@import '../Variables/variables.scss';
-
-.loading {
-    font-family: map-get($font-families, Patrick);
-    background-color: map-get($background-colors, loader-background);
-    box-shadow: map-get($shadows, loader-shadow)
-}

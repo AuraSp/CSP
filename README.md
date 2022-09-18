@@ -4,7 +4,7 @@ Global companies's information and prices history
 
 ## Framework Used
 
-- React v17.0
+- React v^18.2.0
 - Bootstrap v5.1
 
 ## Logger used
@@ -22,7 +22,18 @@ code .
 # in the terminal enter cloned directory
 cd CSP
 
-# install dependencies and run in development mode
+# for the logger to work, start server
+    • open terminal in vscode and navigate to a server directory •
+cd server
+    • install dependencies needed for server to work •
+npm install
+    • start the script
+npm start
+
+# for the React application to run
+    • open another terminal in vscode and this time navigate to a client directory •
+cd client
+    • install dependencies and run application in development mode •
 npm install
 npm start
 
