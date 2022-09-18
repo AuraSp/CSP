@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import HistoryDiagram from '../../Diagram/HistoryDiagram';
+import HistoryDiagram from '../Diagram/HistoryDiagram';
 
-// import '../../../Styles/Card/card.css';
+import '../../Styles/Card/card.css';
 
 function Card({ info, stocks, time }) {
 
@@ -59,7 +59,6 @@ function Card({ info, stocks, time }) {
                 :
                 (
                     <Fragment>
-
                         <img src={info.logo ? info.logo : 'No logo...'} alt='Company Logo' className='col-lg-12 col-md-12 col-sm-12 img-thumnbnail p-0 w-25 rounded mx-auto my-3' />
                         <ul className='col-lg-12 col-md-12 col-sm-12 d-flex flex-row flex-wrap justify-content-center list-unstyled my-1 list' data-testid='cardlist'>
                             <li className='col-lg-4 col-md-5 col-sm-12 border m-1 border-danger d-flex justify-content-center align-items-center'><button className='btn border-0 text-light' onClick={getChart}>{info.name}</button></li>
@@ -68,7 +67,7 @@ function Card({ info, stocks, time }) {
                             <li className='col-lg-4 col-md-5 col-sm-12 border m-1 border-danger d-flex justify-content-center align-items-center'>{info.weburl ? <a href={info.weburl} className='text-decoration-none text-light'>{info.weburl}</a> : 'No website url'}</li>
                         </ul>
                         {popUp && (
-                            !diagramData ? errMsg : <HistoryDiagram
+                            !diagramData ? <p className='rounded text-center text-light fs-5 mx-auto p-4 my-3 loading'>{errMsg}</p> : <HistoryDiagram
                                 diagramData={diagramData
                                 } />
                         )}

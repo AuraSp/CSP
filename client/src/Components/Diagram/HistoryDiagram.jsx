@@ -26,7 +26,7 @@ function HistoryDiagram({ diagramData }) {
   
   return (
 
-    <div>
+    <div className='row my-4 mx-0 bg-dark border rounded'>
       <Chart
         id='zoomedChart'
         dataSource={diagramData}

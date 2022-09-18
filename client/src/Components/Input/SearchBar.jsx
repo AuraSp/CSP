@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { MdManageSearch } from 'react-icons/md';
 
-// import '../../../Styles/InputsSection/searchBar.css';
+import '../../Styles/InputsSection/searchBar.css';
 
 function SearchBar({ handleSubmit, inputValue, setInputValue }) {
 

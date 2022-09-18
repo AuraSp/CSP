@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import Card from './Card/Card';
 import SearchBar from './Input/SearchBar';
 import { DateRangePicker } from 'rsuite';
 import { uuid } from 'uuidv4';
 
 import 'rsuite/dist/rsuite.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+import '../Styles/MainContainer/main.css';
+import '../Styles/LoadersSection/loader.css';
 
 function CompanyDetails() {
 
@@ -13,6 +17,7 @@ function CompanyDetails() {
 
     //LOADER FOR API
     const [load, setLoad] = useState(true);
+    const [loadMsg, setLoadMsg] = useState();
 
     //STATE VARIABLES FOR FETCHED DATA
     const [profiles, setProfile] = useState({});
@@ -102,6 +107,7 @@ function CompanyDetails() {
         e.preventDefault();
         initFetching(startDate, endDate);
         initSymbolLogging();
+        setLoadMsg('Fetching data, please wait!...')
     };
 
 
@@ -120,7 +126,7 @@ function CompanyDetails() {
 
 
     return (
-        <div>
+        <Fragment>
             <div className='row w-75 mx-auto py-4 inputContainer'>
                 <div className='row mx-auto w-50 d-flex my-2'>
                     <SearchBar
@@ -138,19 +144,21 @@ function CompanyDetails() {
 
             </div>
             <div className='row mx-auto w-75 h-100'>
-                {!load &&
+                {loadMsg && load ?
+                    <p className='rounded text-center text-light fs-5 mx-auto p-4 my-3 loading'>{loadMsg}</p> :
+                    (!load &&
+                        <Card
+                            key={uuid}
 
-                    <Card
-                        key={uuid}
+                            info={profiles}
+                            stocks={stocks}
+                            time={time}
+                        />
 
-                        info={profiles}
-                        stocks={stocks}
-                        time={time}
-                    />
-
+                    )
                 }
             </div>
-        </div>
+        </Fragment>
     )
 }
 

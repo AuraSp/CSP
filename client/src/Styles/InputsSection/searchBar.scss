@@ -1,0 +1,24 @@
+@import '../Variables/variables.scss';
+
+.description {
+    font-family: map-get($font-families, Patrick);
+}
+
+.error {
+    font-family: map-get($font-families, Patrick);
+    margin-bottom: 0.5em;
+}
+
+.form {
+    input {
+        width: map-get($widths, "small");
+        border-radius: map-get($border-radius , "bigger");
+        background-color: map-get($background-colors, input-background);
+        font-family: map-get($font-families, Kalam);
+    }
+
+    .btn {
+        width: map-get($widths, "small");
+        border-radius: map-get($border-radius , "bigger");
+    }
+}
