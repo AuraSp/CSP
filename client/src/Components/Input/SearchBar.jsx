@@ -16,7 +16,7 @@ function SearchBar({ handleSubmit, inputValue, setInputValue }) {
 
   return (
     <Fragment>
-      <p className='text-center text-light description'>Use search bar to find out different companies's stock information</p>
+      <p data-testid='searchbar' className='text-center text-light description'>Use search bar to find out different companies's stock information</p>
       <p className={barFocus && !validText ? 'text-danger text-center error' : ''}>{barFocus && !validText ? 'Up to 35 characters only and no numbers' : ''}</p>
 
       <form onSubmit={handleSubmit} className='d-flex flex-lg-row flex-md-column flex-sm-column m-md-1 m-sm-0 justify-content-center text-light form'>
@@ -28,7 +28,7 @@ function SearchBar({ handleSubmit, inputValue, setInputValue }) {
           onFocus={() => setBarFocus(true)}
           onChange={(e) => setInputValue(e.target.value)}
           value={inputValue}
-          data-testid='text' />
+          data-testid='input' />
         <button type='submit' value='Search' data-testid='submitbtn' className='btn border text-center border-secondary my-sm-1 mx-lg-3 mx-md-0 mx-sm-0' disabled={!validText} ><MdManageSearch className='p-0 m-0 text-light fs-4' /></button>
       </form>
     </Fragment>
